@@ -51,8 +51,10 @@
                 return 'Computer Wins!';
             } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
                 return 'Computer Wins!';
-            } else {
+            } else if (playerSelection === computerSelection) {
                 return "It's a tie!";
+            } else {
+                return 'Invalid selection! Computer wins!';
             }
         }       
             function game() {
@@ -64,7 +66,9 @@
                     const result = playRound(playerSelection, computerSelection);
                     if (result === 'You Win!') {
                         playerScore++;
-                     } else if (result === 'Computer Wins!') {
+                    } else if (result === 'Computer Wins!') {
+                        computerScore++;
+                    } else if (result === 'Invalid selection! Computer wins!') {
                         computerScore++;
                     }
                     alert('Round ' + i + ': ' + result + '\n\nYour score: ' + playerScore + '\nComputer score: ' + computerScore);
@@ -73,9 +77,7 @@
                     alert('You are the overall winner!');
                 } else if (computerScore > playerScore) {
                     alert('The computer is the overall winner!');
-                } else {
-                    alert('It is a tie!');
-                }
+                } 
             }
 
 
