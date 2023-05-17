@@ -5,86 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <button class=sadge onclick="game()">Play Game</button>
-    <style> .sadge {
-        display: flex;
-        flex: 1;
-        font-size: 32px;
-        font-weight: 700;
-        background-color: lightblue;
-        border-radius: 8px;
-        border: 2px solid;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-        } </style>
-    <script>
+    <div class="main">
+        <h1>Rock Paper Scissors</h1>
+        <h3 id="choice">Computer choice</h3>
+    </div>
+    <div class="buttons">
+        <button id='rock'> </button>
+        <button id='paper'></button>
+        <button id='scissors'></button>
+    </div>
+    <div class="score">
+        <h3 id="pscore">Player Score: 0</h3>
+        <h3 id="round">Round 1</h3>
+        <h3 id="cscore">Computer Score: 0</h3>
+    </div>
+    <div class="choice">
         
-        //const playerSelection = prompt('Rock, Paper, or Scissors?')
-        
-        function getComputerChoice() {
-            const randomnumber = Math.floor(Math.random()*3);
-                switch (randomnumber) {
-                    case 0:
-                    return 'rock';
-                    case 1:
-                    return 'paper';
-                    case 2:
-                    return 'scissors';
-            }
-        }
-        const computerSelection = getComputerChoice();
-
-        function playRound(playerSelection, computerSelection){
-            if (playerSelection === 'rock' && computerSelection === 'scissors') {
-                return 'You Win!';
-            } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-                return 'You Win!';
-            } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-                return 'You Win!';
-            } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-                return 'Computer Wins!';
-            } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-                return 'Computer Wins!';
-            } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-                return 'Computer Wins!';
-            } else if (playerSelection === computerSelection) {
-                return "It's a tie!";
-            } else {
-                return 'Invalid selection! Computer wins!';
-            }
-        }       
-            function game() {
-                let playerScore = 0;
-                let computerScore = 0;
-                for (let i = 1; i <= 5; i++) {
-                    const playerSelection = prompt('Rock, Paper, or Scissors?').toLowerCase();
-                    const computerSelection = getComputerChoice();
-                    const result = playRound(playerSelection, computerSelection);
-                    if (result === 'You Win!') {
-                        playerScore++;
-                    } else if (result === 'Computer Wins!') {
-                        computerScore++;
-                    } else if (result === 'Invalid selection! Computer wins!') {
-                        computerScore++;
-                    }
-                    alert('Round ' + i + ': ' + result + '\n\nYour score: ' + playerScore + '\nComputer score: ' + computerScore);
-                }
-                if (playerScore > computerScore) {
-                    alert('You are the overall winner!');
-                } else if (computerScore > playerScore) {
-                    alert('The computer is the overall winner!');
-                } 
-            }
+    </div>
 
 
 
-
-
-
-    </script>
+    
 </body>
 </html>

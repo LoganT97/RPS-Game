@@ -1,0 +1,123 @@
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 1; i <= 5; i++) {
+        const playerSelection = prompt('Rock, Paper, or Scissors?').toLowerCase();
+        const computerSelection = getComputerChoice();
+        const result = playRound(playerSelection, computerSelection);
+        if (result === 'You Win!') {
+            playerScore++;
+        } else if (result === 'Computer Wins!') {
+            computerScore++;
+        } else if (result === 'Invalid selection! Computer wins!') {
+            computerScore++;
+        }
+        alert('Round ' + i + ': ' + result + '\n\nYour score: ' + playerScore + '\nComputer score: ' + computerScore);
+    }
+    if (playerScore > computerScore) {
+        alert('You are the overall winner!');
+    } else if (computerScore > playerScore) {
+        alert('The computer is the overall winner!');
+    }
+}
+
+
+
+function playRound(playerSelection, computerSelection){
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'You Win!';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return 'You Win!';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return 'You Win!';
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return 'Computer Wins!';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return 'Computer Wins!';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return 'Computer Wins!';
+    } else if (playerSelection === computerSelection) {
+        return "It's a tie!";
+    } else {
+        return 'Invalid selection! Computer wins!';
+    }
+}   
+
+
+
+document.getElementById('pscore').textContent = 'Does this work?'
+
+
+
+
+
+
+
+
+let round = 1;
+document.getElementById('rock').addEventListener('click', function() {
+    if (round <=5) {
+        playRound('rock');
+        round++;
+        document.getElementById('round').textContent = 'Round ' + round;
+    if (round == 6) {
+        document.getElementById('round').innerHTML = '<button id ="playAgain" onClick="window.location.reload();">Play Again</button>';
+    }
+    }
+})
+document.getElementById('paper').addEventListener('click', function() {
+    if (round <=5) {
+        playRound('paper');
+        round++;
+        document.getElementById('round').textContent = 'Round ' + round;
+    if (round == 6) {
+        document.getElementById('round').innerHTML = '<button id ="playAgain" onClick="window.location.reload();">Play Again</button>';
+    }
+    }
+})
+document.getElementById('scissors').addEventListener('click', function() {
+    if (round <=5) {
+        playRound('scissors');
+        round++;
+        document.getElementById('round').textContent = 'Round ' + round;
+    if (round == 6) {
+        document.getElementById('round').innerHTML = '<button id ="playAgain" onClick="window.location.reload();">Play Again</button>';
+    }
+    }
+})
+function playRound(playerSelection) {
+    
+        
+    const computerChoice = Math.floor(Math.random()*3);
+        let computerSelection; 
+                
+        switch (computerChoice) {
+            case 0:
+                computerSelection = 'rock';
+                break;
+            case 1:
+                computerSelection = 'paper';
+                break;
+            case 2:
+                computerSelection = 'scissors';
+                break;
+            }
+        if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            return 'You Win!';
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+            return 'You Win!';
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            return 'You Win!';
+        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+            return 'Computer Wins!';
+        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+            return 'Computer Wins!';
+        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+            return 'Computer Wins!';
+        } else if (playerSelection === computerSelection) {
+            return "It's a Tie!";
+        } else {
+            return 'Invalid selection! Computer wins!';
+        } 
+        
+}

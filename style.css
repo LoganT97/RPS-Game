@@ -1,0 +1,111 @@
+    body {
+        background-color: grey;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.5em;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    h1,h3 {
+        margin: 16px;
+    }
+    .main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: darkgrey;
+        text-align: center;
+    }
+    
+    #rock {
+        display: flex;
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        background-image: url(rock.svg);
+        background-size: contain;
+        border-style: none;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 250px;
+        }
+    #paper {
+        display: flex;
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        background-image: url(paper.svg);
+        background-size: contain;
+        border-style: none;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 250px;
+        }
+    #scissors {
+        display: flex;
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        background-image: url(scissors.svg);
+        background-size: contain;
+        border-style: none;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 250px;
+        }
+    .buttons{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-top: 1.5em;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 1.5em;
+        } 
+    .score, .choice {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 1em;
+        background-color: darkgrey;
+        text-align: center;
+        margin: 0;
+        margin-top: 16px;
+        font-size: 1.1em;
+    }
+    #playAgain {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        border: 3px solid;
+        border-color: grey;
+        color: white;
+        background-color: darkgray;
+        font-size: .8em;
+        font-weight: bolder;
+        width: fit-content;
+    }
+    #scissors:hover,#rock:hover,#paper:hover {
+        transform: scale(1.1);
+    }
+    #rock:active,#paper:active,#scissors:active {
+        transform: scale(1);
+
+    }
